@@ -75,6 +75,10 @@ class ColorThief(object):
         # Send array to quantize function which clusters values
         # using median cut algorithm
         cmap = MMCQ.quantize(valid_pixels, color_count)
+
+        # Exposing cmap because I want to use it outside the package
+        self.cmap = cmap
+
         return cmap.palette
 
 
